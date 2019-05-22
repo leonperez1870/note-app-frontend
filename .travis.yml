@@ -2,12 +2,12 @@ sudo: required
 language: node_js
 node_js:
   - "node"
-before_script: chmod 0777 ./deploy/frontend.sh
+before_script: chmod 0777 ./deploy.sh
 jobs:
   include:
     - stage: deploy_frontend
-      if: branch = master OR branch = staging
-      script: ./deploy/frontend.sh
+      if: branch = master OR branch = staging OR branch = development
+      script: ./deploy.sh
 deploy:
   - provider: s3
     access_key_id: $AWS_ACCESS_KEY_ID
