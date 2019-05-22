@@ -1,0 +1,8 @@
+# package directories
+node_modules
+jspm_packages
+
+# Production files 'npm run prod'
+./Source/dist
+
+.DS_Store
